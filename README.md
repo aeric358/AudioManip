@@ -1,7 +1,4 @@
 
-All files included are for the waveformfaultoverlay.mlx script to do its calculations properly. 
-**At a minimum, bearFreq.m must be in same folder location as harmonicbear.mlx since bearFreq contains the function to be used for the fault harmonic calculations in harmonicbear.mlx**
-
 **MAIN SCRIPTS: testaudiomachine.mlx; fastftaudio.mlx; audiosimilarity.mlx; encplayground.mlx; reconenc.mlx**
 
 **FUNCTION SCRIPTS: generateFFTFeatures.m; generateAudioFeatures.m; extractAndPlayChannel.m; helperPlotMultiChannelAudio.m**
