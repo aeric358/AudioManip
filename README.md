@@ -24,8 +24,6 @@ After training, run the reconenc.mlx script to use the predict() function to see
 
 
 ![reconstruct](https://github.com/user-attachments/assets/59d125e0-6a50-4ba3-9a70-b66abe7893f6)
-
-
-[reconexample3.pdf](https://github.com/user-attachments/files/19016989/reconexample3.pdf)
-[reconexample1.pdf](https://github.com/user-attachments/files/19016988/reconexample1.pdf)
-[reconexample2.pdf](https://github.com/user-attachments/files/19016986/reconexample2.pdf)
+![reconex1](https://github.com/user-attachments/assets/6cbfd895-a8e6-4d03-9818-ec504e59d3cf)
+![reconex2](https://github.com/user-attachments/assets/785a15a3-19e4-48de-ae40-3b1d1521817d)
+![reconex3](https://github.com/user-attachments/assets/e2eb4745-18aa-4027-a410-360e3bb20da0)
