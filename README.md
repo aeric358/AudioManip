@@ -38,5 +38,5 @@ autoenc2 = trainAutoencoder(waveformData, hiddenSize2, ...
 
 ![reconstruct](https://github.com/user-attachments/assets/59d125e0-6a50-4ba3-9a70-b66abe7893f6)
 ![reconex1](https://github.com/user-attachments/assets/6cbfd895-a8e6-4d03-9818-ec504e59d3cf)
-![reconex2](https://github.com/user-attachments/assets/785a15a3-19e4-48de-ae40-3b1d1521817d)
+![reconex2](https://github.com/user-attachments/assets/73d72e94-dae0-4e5a-b785-f61af1ca1e5f)
 ![reconex3](https://github.com/user-attachments/assets/e2eb4745-18aa-4027-a410-360e3bb20da0)
