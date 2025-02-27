@@ -18,6 +18,10 @@ After training, run the reconenc.mlx script to use the predict() function to see
 
 ** (shown graphs and images are my own hyper-params and performance from most recent run)
 **
+
+
+
+
 %  Autoencoder structure
 hiddenSize2 = 32;
 autoenc2 = trainAutoencoder(waveformData, hiddenSize2, ...
