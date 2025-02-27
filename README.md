@@ -19,13 +19,13 @@ After training, run the reconenc.mlx script to use the predict() function to see
 ** (shown graphs and images are my own hyper-params and performance from most recent run)
 **
 
-**Step 2b (Supervised Learning): (audiosimlarity.mlx)**
 
 
 
 
 ![reconstruct](https://github.com/user-attachments/assets/59d125e0-6a50-4ba3-9a70-b66abe7893f6)
-![reconexample2](https://github.com/user-attachments/assets/7c551ea0-89c5-417a-9fd1-2c9f50a7e25e)
-![reconexample1](https://github.com/user-attachments/assets/51644d08-aacf-48df-bdcd-60b816c01685)
-![reconexample3](https://github.com/user-attachments/assets/bf13d66f-6df5-477f-a8a0-637fa9637e8b)
 
+
+[reconexample3.pdf](https://github.com/user-attachments/files/19016989/reconexample3.pdf)
+[reconexample1.pdf](https://github.com/user-attachments/files/19016988/reconexample1.pdf)
+[reconexample2.pdf](https://github.com/user-attachments/files/19016986/reconexample2.pdf)
