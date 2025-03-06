@@ -41,6 +41,10 @@ autoenc2 = trainAutoencoder(waveformData, hiddenSize2, ...
 ![reconex2](https://github.com/user-attachments/assets/73d72e94-dae0-4e5a-b785-f61af1ca1e5f)
 ![reconex3](https://github.com/user-attachments/assets/e2eb4745-18aa-4027-a410-360e3bb20da0)
 
+%%%%%%%%%%%%%%%%%%  CHANGES MADE SINCE PREVIOUS METRICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+- Instead of sample chunks of 1 second, window was shortened to .0063 sec (1000 samples with sampling frequency of 160000 Hz).
+- Increased the hiddensize from 32 to 50 and epochs from 100 to 500. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 hiddenSize5 = 50; 
 autoenc5 = trainAutoencoder(waveformData, hiddenSize5, ...
@@ -56,7 +60,7 @@ autoenc5 = trainAutoencoder(waveformData, hiddenSize5, ...
     %%%% Load Pretrained Autoencoder Weights & Biases %%%%
 we = autoenc5.EncoderWeights;  
 be = autoenc5.EncoderBiases;  
-%%%% Define BILSTM Network with Pretrained Weights %%%%
+%%%% Define LSTM Network with Pretrained Weights %%%%
 outPut_Size = size(we, 1);  % Should match encoded feature size (latent space)
 inputSize = size(we, 2);    % Original waveform feature size
 
@@ -95,6 +99,6 @@ net = trainNetwork(testwaveformDataSeq', testwaveformDataSeq', layers, options);
 ![finalencperf](https://github.com/user-attachments/assets/0a6ccdad-b16d-467d-8e4a-fdf30f14714a)
 ![finalencvis2](https://github.com/user-attachments/assets/984434aa-6e4c-4091-aeac-11129e2fb6c5)
 ![finalencvis1](https://github.com/user-attachments/assets/ed5e8eb6-8953-42fb-baeb-c638702e21e4)
-![autoencperform](https://github.com/user-attachments/assets/2380af98-91c2-45dd-b3e3-f6928ef97bb8)
 ![simtest2](https://github.com/user-attachments/assets/36e4a10c-f50b-4723-af0a-212e8a393e84)
+![autoencperform](https://github.com/user-attachments/assets/2380af98-91c2-45dd-b3e3-f6928ef97bb8)
 ![svmperform](https://github.com/user-attachments/assets/ab19c193-d16a-4ddb-92d8-1c531ba782eb)
