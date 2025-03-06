@@ -53,6 +53,44 @@ autoenc5 = trainAutoencoder(waveformData, hiddenSize5, ...
     'ScaleData', true, ...
     'ShowProgressWindow',true);
 
+    %%%% Load Pretrained Autoencoder Weights & Biases %%%%
+we = autoenc5.EncoderWeights;  
+be = autoenc5.EncoderBiases;  
+%%%% Define BILSTM Network with Pretrained Weights %%%%
+outPut_Size = size(we, 1);  % Should match encoded feature size (latent space)
+inputSize = size(we, 2);    % Original waveform feature size
+
+layer = fullyConnectedLayer(outPut_Size, ...
+    'Weights', we, ...
+    'Bias', be);
+
+% Define LSTM-based Architecture
+layers = [
+    sequenceInputLayer(inputSize)
+    layer
+    lstmLayer(30, 'OutputMode', 'sequence')
+    fullyConnectedLayer(inputSize)
+    regressionLayer];
+
+%%%% Training Options %%%%
+options = trainingOptions('adam', ...
+   'Plots', 'training-progress', ...
+   'MiniBatchSize', 500, ...
+   'MaxEpochs', 500, ...
+   'SequencePaddingDirection','left',...
+   'Shuffle', 'every-epoch', ...
+   'GradientThreshold', 1, ...
+   'Verbose', true, ...
+   'ExecutionEnvironment', 'auto');
+
+%%%% Reshape Data for LSTM %%%%
+testwaveformDataSeq = permute(testwaveformData, [2, 1]); % Ensure correct format for LSTM
+
+%%%% Train the Model %%%%
+net = trainNetwork(testwaveformDataSeq', testwaveformDataSeq', layers, options);
+
+
+
 
 ![simtest2](https://github.com/user-attachments/assets/36e4a10c-f50b-4723-af0a-212e8a393e84)
 ![autoencperform](https://github.com/user-attachments/assets/2380af98-91c2-45dd-b3e3-f6928ef97bb8)
