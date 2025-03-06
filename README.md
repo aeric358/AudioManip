@@ -92,7 +92,9 @@ net = trainNetwork(testwaveformDataSeq', testwaveformDataSeq', layers, options);
 
 
 ![finalautoencstruct](https://github.com/user-attachments/assets/a094434b-2b0f-4825-af86-b30be56ff2ec)
+![finalencperf](https://github.com/user-attachments/assets/0a6ccdad-b16d-467d-8e4a-fdf30f14714a)
+![finalencvis2](https://github.com/user-attachments/assets/984434aa-6e4c-4091-aeac-11129e2fb6c5)
+![finalencvis1](https://github.com/user-attachments/assets/ed5e8eb6-8953-42fb-baeb-c638702e21e4)
 ![autoencperform](https://github.com/user-attachments/assets/2380af98-91c2-45dd-b3e3-f6928ef97bb8)
 ![simtest2](https://github.com/user-attachments/assets/36e4a10c-f50b-4723-af0a-212e8a393e84)
-![finalencperf](https://github.com/user-attachments/assets/0a6ccdad-b16d-467d-8e4a-fdf30f14714a)
 ![svmperform](https://github.com/user-attachments/assets/ab19c193-d16a-4ddb-92d8-1c531ba782eb)
