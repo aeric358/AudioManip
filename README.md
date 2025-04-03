@@ -30,7 +30,7 @@ Data Processing -> SVM Classification. These were the
 hypothesized results and the hypothesis has been confirmed
 true.
 
--If you were to prepare your own array of features from 
+- If you were to prepare your own array of features from 
 your sound samples and conduct the same tests with:
 Data Prep -> Auto Encoder Analysis -> SVM
 Data Prep -> SVM
@@ -39,5 +39,15 @@ the Auto Encoder route still outperforming the
 initial SVM method by ~=1%.
 
 
+![autoencfeatures](https://github.com/user-attachments/assets/a102215f-9b19-4fd0-9e07-fa73d1533e83)
+![neuronsauto](https://github.com/user-attachments/assets/33a8a05c-4ceb-4722-9510-28743c82a4c1)
+![autoencperformance](https://github.com/user-attachments/assets/f4f7a564-c3f4-4b3b-8005-1fd7d2b9442b)
+![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
 
+https://github.com/user-attachments/assets/4f59c09e-97a0-4e19-bded-891eafb6af45
+
+
+![handcraftedfullwave](https://github.com/user-attachments/assets/f10cd2b8-d96e-4588-b825-b54f729c53d7)
+
+https://github.com/user-attachments/assets/ec9cffd4-ea42-4310-ae52-65eaa0f91efd
 
