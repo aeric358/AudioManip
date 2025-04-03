@@ -44,7 +44,10 @@ initial SVM method by ~=1%.
 ![autoencperformance](https://github.com/user-attachments/assets/f4f7a564-c3f4-4b3b-8005-1fd7d2b9442b)
 ![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
 
-https://github.com/user-attachments/assets/4f59c09e-97a0-4e19-bded-891eafb6af45
+
+
+https://github.com/user-attachments/assets/64618056-6b40-4270-848b-bcefbc0cdd8c
+
 
 
 ![handcraftedfullwave](https://github.com/user-attachments/assets/f10cd2b8-d96e-4588-b825-b54f729c53d7)
