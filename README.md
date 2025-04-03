@@ -46,7 +46,10 @@ initial SVM method by ~=1%.
 
 
 
-https://github.com/user-attachments/assets/64618056-6b40-4270-848b-bcefbc0cdd8c
+
+https://github.com/user-attachments/assets/35092b68-198d-4286-b81a-64eb2fefa934
+
+
 
 
 
