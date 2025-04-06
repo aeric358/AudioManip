@@ -39,8 +39,6 @@ the Auto Encoder route still outperforming the
 initial SVM method by ~=1%.
 
 
-![autoencfeatures](https://github.com/user-attachments/assets/a102215f-9b19-4fd0-9e07-fa73d1533e83)
-![neuronsauto](https://github.com/user-attachments/assets/33a8a05c-4ceb-4722-9510-28743c82a4c1)
 ![autoencperformance](https://github.com/user-attachments/assets/f4f7a564-c3f4-4b3b-8005-1fd7d2b9442b)
 ![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
 
