@@ -41,7 +41,7 @@ initial SVM method by ~=1%.
 
 ![autoencperformance](https://github.com/user-attachments/assets/f4f7a564-c3f4-4b3b-8005-1fd7d2b9442b)
 ![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
-
+![sneclustbalanced](https://github.com/user-attachments/assets/e227848e-cefa-4ef2-82c8-bebd413cc8a1)
 
 
 
