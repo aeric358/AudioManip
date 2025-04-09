@@ -38,20 +38,28 @@ Performance between both methods is similar, with
 the Auto Encoder route still outperforming the
 initial SVM method by ~=1%.
 
+![tsne2and3pos](https://github.com/user-attachments/assets/c85ef479-62e0-4b9d-83db-eba8cc332149)
+![tsne1and3pos](https://github.com/user-attachments/assets/907265ca-43b2-4c3b-a367-4db1a372b6f6)
+![tsne1and2pos](https://github.com/user-attachments/assets/b95045c0-0f8c-4406-8c3b-942de30bcc8d)
+![tsneauxpos](https://github.com/user-attachments/assets/263d299a-e491-400a-92ba-1e1b69dafc0a)
 
-![autoencperformance](https://github.com/user-attachments/assets/f4f7a564-c3f4-4b3b-8005-1fd7d2b9442b)
+![AEStructfinal](https://github.com/user-attachments/assets/7c8c81ba-e0ee-4088-8565-65c922f64643)
+
+![AEperformancefinal](https://github.com/user-attachments/assets/20c2d5d6-fa3a-45f0-b6b8-646eba65e39d)
 ![sneclustbalanced](https://github.com/user-attachments/assets/e227848e-cefa-4ef2-82c8-bebd413cc8a1)
 ![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
 
 
+https://github.com/user-attachments/assets/942bf3e8-d030-41bf-89ac-f37e4095f610
 
 https://github.com/user-attachments/assets/35092b68-198d-4286-b81a-64eb2fefa934
 
 
 
-
-
 ![handcraftedfullwave](https://github.com/user-attachments/assets/f10cd2b8-d96e-4588-b825-b54f729c53d7)
-
 https://github.com/user-attachments/assets/ec9cffd4-ea42-4310-ae52-65eaa0f91efd
+
+![handcraftedsvmperformancefeatures](https://github.com/user-attachments/assets/f8c5cef3-c270-4ab6-b719-c46b5b24dbac)
+https://github.com/user-attachments/assets/b76ce7c0-771c-4e4a-a721-fdf2dce047fb
+
 
