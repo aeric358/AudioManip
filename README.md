@@ -48,13 +48,13 @@ initial SVM method by ~=1%.
 
 https://github.com/user-attachments/assets/942bf3e8-d030-41bf-89ac-f37e4095f610
 
-
-
-
 ![handcraftedfullwave](https://github.com/user-attachments/assets/f10cd2b8-d96e-4588-b825-b54f729c53d7)
+
 https://github.com/user-attachments/assets/ec9cffd4-ea42-4310-ae52-65eaa0f91efd
 
+
 ![handcraftedsvmperformancefeatures](https://github.com/user-attachments/assets/f8c5cef3-c270-4ab6-b719-c46b5b24dbac)
+
 https://github.com/user-attachments/assets/b76ce7c0-771c-4e4a-a721-fdf2dce047fb
 
 
