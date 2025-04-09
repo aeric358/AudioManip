@@ -42,11 +42,8 @@ initial SVM method by ~=1%.
 ![tsne1and3pos](https://github.com/user-attachments/assets/907265ca-43b2-4c3b-a367-4db1a372b6f6)
 ![tsne1and2pos](https://github.com/user-attachments/assets/b95045c0-0f8c-4406-8c3b-942de30bcc8d)
 ![tsneauxpos](https://github.com/user-attachments/assets/263d299a-e491-400a-92ba-1e1b69dafc0a)
-
 ![AEStructfinal](https://github.com/user-attachments/assets/7c8c81ba-e0ee-4088-8565-65c922f64643)
-
 ![AEperformancefinal](https://github.com/user-attachments/assets/20c2d5d6-fa3a-45f0-b6b8-646eba65e39d)
-![Performsvmauto](https://github.com/user-attachments/assets/9e56b479-39e1-471d-a80a-ce640047c7ba)
 
 
 https://github.com/user-attachments/assets/942bf3e8-d030-41bf-89ac-f37e4095f610
