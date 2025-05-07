@@ -9,7 +9,7 @@ Past tests consisted of 1 second chunks and smaller for the sake
 of run time and seeing how the system performs with
 chunks of data.
 
-Shown tests take on the full 10 seconds of each sound sample,
+Shown tests take on 1 second chunks of each sound sample,
 providing more accurate classification and more distinct
 learned patterns/hidden features that the Auto Encoder learned.
 
