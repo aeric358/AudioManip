@@ -1,104 +1,60 @@
+The new additions to the updated scripts have gone through the 
+full process of data retrieval, preparation, training, and testing.
 
-**MAIN SCRIPTS: testaudiomachine.mlx; fastftaudio.mlx; audiosimilarity.mlx; testdataprep; encplayground.mlx; reconenc.mlx**
+Visuals provided use 200 samples of audio files with 
+160000 points, a sampling rate (Hz) of 16000 Hz, 7 Channel Audio,
+and a total time length of 10 seconds.
 
-**FUNCTION SCRIPTS: generateFFTFeatures.m; generateAudioFeatures.m; extractAndPlayChannel.m; helperPlotMultiChannelAudio.m**
+Past tests consisted of 1 second chunks and smaller for the sake
+of run time and seeing how the system performs with
+chunks of data.
 
-**Step 1: Check/Prepare Audio Files (testaudiomachine.mlx)>[if you want to manually choose features]>(audiosimilarity.mlx)/(fastftaudio.mlx)**
+Shown tests take on 1 second chunks of each sound sample,
+providing more accurate classification and more distinct
+learned patterns/hidden features that the Auto Encoder learned.
 
-This step is meant to provide some visual aid and starting features to play around with and understand what differentiates an audio clip from another. This step can be used to provide a competitor to the autoencoder to be used down the line, as it will be producing its own features/patterns to distinguishing different waveforms.
+My personal conclusion from various testing cases and analyzing 
+hyperparameters, learned parameters, encoded/decoded spaces,
+the latent space of the Auto Encoder, the weights and performance of the SVM's,
+and playing around with different data formats, is as follows:
 
-**Step 2a (Unsupervised Learning):(audiosimilarity.mlx)+(testdataprep.mlx)->(encplayground.mlx)->(reconenc.mlx)**
-To start the autoencoder training, split your audio files into two separate groups with equal number of rows and columns, the training data set(audiosimilarity.mlx) and the the testing data set(testdataprep.mlx). 
+- Data time frame doesn't matter, what matters is that the provided 
+time frame holds the right features in the right places
+(i.e., healthy data looks relatively uniform, 
+anomalous data has distinct peaks in time frame)
 
-**NOTE: Make sure the test and training sets are of equal sizes. I ran into an issue where if the data sets are of differing sizes(one is 15x16000 and the other is 25x16000), the predict(),encode(),decode(), and other functions utilizing the test set will not work.**
+- The method of passing raw data through the Auto Encoder
+and providing the learned features to an SVM has consistently
+outperformed the initial process of just 
+Data Processing -> SVM Classification. These were the 
+hypothesized results and the hypothesis has been confirmed
+true.
 
-Run the encplayground.mlx script to begin training the autoencoder of your choice.
+- If you were to prepare your own array of features from 
+your sound samples and conduct the same tests with:
+Data Prep -> Auto Encoder Analysis -> SVM
+Data Prep -> SVM
+Performance between both methods is similar, with 
+the Auto Encoder route still outperforming the
+initial SVM method by ~=1%.
 
-After training, run the reconenc.mlx script to use the predict() function to see how accurately the "autoenc2" network reconstructs "testwaveformData" based on what it has learned from the training data set. 
-
-** (shown graphs and images are my own hyper-params and performance from most recent run)
-**
-
-
-
-
-%  Autoencoder structure
-hiddenSize2 = 32;
-autoenc2 = trainAutoencoder(waveformData, hiddenSize2, ...
-    'MaxEpochs', 100,...
-    'EncoderTransferFunction','satlin',...
-     'DecoderTransferFunction','purelin',...
-    'L2WeightRegularization', 0.0001, ...
-    'SparsityRegularization', 1, ...
-    'SparsityProportion', 0.1, ...
-    'ScaleData', true);
-
-
-
-
-![reconstruct](https://github.com/user-attachments/assets/59d125e0-6a50-4ba3-9a70-b66abe7893f6)
-![reconex1](https://github.com/user-attachments/assets/6cbfd895-a8e6-4d03-9818-ec504e59d3cf)
-![reconex2](https://github.com/user-attachments/assets/73d72e94-dae0-4e5a-b785-f61af1ca1e5f)
-![reconex3](https://github.com/user-attachments/assets/e2eb4745-18aa-4027-a410-360e3bb20da0)
-
-%%%%%%%%%%%%%%%%%%  CHANGES MADE SINCE PREVIOUS METRICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-- Instead of sample chunks of 1 second, window was shortened to .0063 sec (1000 samples with sampling frequency of 160000 Hz).
-- Increased the hiddensize from 32 to 50 and epochs from 100 to 500. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-hiddenSize5 = 50; 
-autoenc5 = trainAutoencoder(waveformData, hiddenSize5, ...
-    'MaxEpochs', maxep,...
-    'EncoderTransferFunction','satlin',...
-     'DecoderTransferFunction','purelin',...
-    'L2WeightRegularization', l2reg, ...
-    'SparsityRegularization', sparsreg, ...
-    'SparsityProportion', sparsport, ...
-    'ScaleData', true, ...
-    'ShowProgressWindow',true);
-
-    %%%% Load Pretrained Autoencoder Weights & Biases %%%%
-we = autoenc5.EncoderWeights;  
-be = autoenc5.EncoderBiases;  
-%%%% Define LSTM Network with Pretrained Weights %%%%
-outPut_Size = size(we, 1);  % Should match encoded feature size (latent space)
-inputSize = size(we, 2);    % Original waveform feature size
-
-layer = fullyConnectedLayer(outPut_Size, ...
-    'Weights', we, ...
-    'Bias', be);
-
-% Define LSTM-based Architecture
-layers = [
-    sequenceInputLayer(inputSize)
-    layer
-    lstmLayer(30, 'OutputMode', 'sequence')
-    fullyConnectedLayer(inputSize)
-    regressionLayer];
-
-%%%% Training Options %%%%
-options = trainingOptions('adam', ...
-   'Plots', 'training-progress', ...
-   'MiniBatchSize', 500, ...
-   'MaxEpochs', 500, ...
-   'SequencePaddingDirection','left',...
-   'Shuffle', 'every-epoch', ...
-   'GradientThreshold', 1, ...
-   'Verbose', true, ...
-   'ExecutionEnvironment', 'auto');
-
-%%%% Reshape Data for LSTM %%%%
-testwaveformDataSeq = permute(testwaveformData, [2, 1]); % Ensure correct format for LSTM
-
-%%%% Train the Model %%%%
-net = trainNetwork(testwaveformDataSeq', testwaveformDataSeq', layers, options);
+![tsne2and3pos](https://github.com/user-attachments/assets/c85ef479-62e0-4b9d-83db-eba8cc332149)
+![tsne1and3pos](https://github.com/user-attachments/assets/907265ca-43b2-4c3b-a367-4db1a372b6f6)
+![tsne1and2pos](https://github.com/user-attachments/assets/b95045c0-0f8c-4406-8c3b-942de30bcc8d)
+![tsneauxpos](https://github.com/user-attachments/assets/263d299a-e491-400a-92ba-1e1b69dafc0a)
+![AEStructfinal](https://github.com/user-attachments/assets/7c8c81ba-e0ee-4088-8565-65c922f64643)
+![AEperformancefinal](https://github.com/user-attachments/assets/20c2d5d6-fa3a-45f0-b6b8-646eba65e39d)
 
 
+https://github.com/user-attachments/assets/942bf3e8-d030-41bf-89ac-f37e4095f610
 
-![finalautoencstruct](https://github.com/user-attachments/assets/a094434b-2b0f-4825-af86-b30be56ff2ec)
-![finalencperf](https://github.com/user-attachments/assets/0a6ccdad-b16d-467d-8e4a-fdf30f14714a)
-![finalencvis2](https://github.com/user-attachments/assets/984434aa-6e4c-4091-aeac-11129e2fb6c5)
-![finalencvis1](https://github.com/user-attachments/assets/ed5e8eb6-8953-42fb-baeb-c638702e21e4)
-![simtest2](https://github.com/user-attachments/assets/36e4a10c-f50b-4723-af0a-212e8a393e84)
-![autoencperform](https://github.com/user-attachments/assets/2380af98-91c2-45dd-b3e3-f6928ef97bb8)
-![svmperform](https://github.com/user-attachments/assets/ab19c193-d16a-4ddb-92d8-1c531ba782eb)
+![handcraftedfullwave](https://github.com/user-attachments/assets/f10cd2b8-d96e-4588-b825-b54f729c53d7)
+
+https://github.com/user-attachments/assets/ec9cffd4-ea42-4310-ae52-65eaa0f91efd
+
+
+![handcraftedsvmperformancefeatures](https://github.com/user-attachments/assets/f8c5cef3-c270-4ab6-b719-c46b5b24dbac)
+
+https://github.com/user-attachments/assets/b76ce7c0-771c-4e4a-a721-fdf2dce047fb
+
+
